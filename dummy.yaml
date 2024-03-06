@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nginx-job3
+  labels:
+    app: nginx
+    remote-app: mynode
+spec:
+  template:
+    spec:
+      nodeName: rasmus-1-1
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+      restartPolicy: Never
+  backoffLimit: 4

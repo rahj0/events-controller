@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: nginx-job3
+  name: nginx-job5
   labels:
     app: nginx
     remote-app: mynode

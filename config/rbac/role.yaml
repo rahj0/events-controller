@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - hjort.uk
+  resources:
+  - events
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hjort.uk
+  resources:
+  - events/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - hjort.uk
+  resources:
+  - events/status
+  verbs:
+  - get
+  - patch
+  - update
